@@ -1,0 +1,118 @@
+<!-- 
+    Copyright 2025 COREISO INC
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights</title>
+    <link rel="stylesheet" href="./sources/index.css">
+</head>
+<body>
+    <div class='flight-container'>
+        <div class="flight-logo">
+            <img src="./sources/malaysia-airlines-logo.png" alt="">
+        </div>
+
+        <div class='flight-header'>
+            <h1 class='flight-title'>Malaysia Airlines 9M-MRA Flights</h1>
+        </div>
+        
+        <div class='flight-detail'><strong>Aircraft: Boeing 777-2H6ER (MSN: 28408)</strong></div>
+        <div style="border-top: 0.15em dashed #2c3e50;"></div>
+        
+        <div class='flight-detail' id='real-time'><strong>Local Date: LOADING...</strong></div>
+        <div class="flight-detail-cover">
+            <div class='flight-detail' id='flight-number'><strong>Flight: LOADING...</strong></div>
+        </div>
+        <div class='remarks'> 
+            <strong>MH0000D/M/A/N & MAS0000D/M/A/N</strong>
+            <ul>
+                <li><strong>MH/MAS: </strong>MALAYSIA AIRLINES (IATA/ICAO)</li>
+                <li><strong>0000: </strong>MMDD (MonthDay)</li>
+                <li class="dawn"><strong>D: </strong>00:00-05:59 (Dawn)</li>
+                <li class="morning"><strong>M: </strong>06:00-11:59 (Morning)</li>
+                <li class="afternoon"><strong>A: </strong>12:00-17:59 (Afternoon)</li>
+                <li class="night"><strong>N: </strong>18:00-23:59 (Night)</li>
+            </ul>
+        </div>
+        <div class="linked-cover">
+            <div class="linked1" onclick="redirectToInfos()"><strong>Informations</strong></div>
+            <div class="linked2" onclick="redirectToPhoto()"><strong>Photographs</strong></div>
+        </div>
+
+        <div style="border-top: 0.15em dashed #2c3e50;"></div>
+        <div class='footer'>
+            <strong>COREISO INC 2025 & MALAYSIA AIRLINES 2025</strong>
+        </div>
+    </div>
+    <script>
+        function redirectToInfos() {
+            window.location.href = "./sources/Infos.html";
+        }
+        function redirectToPhoto() {
+            window.location.href = "./sources/Photos.html";
+        }
+        function updateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeStr = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+            document.getElementById('real-time').innerHTML = `<strong>Local Date: ${timeStr}</strong>`;
+        }  
+        function updateFlightNumber() {
+            const now = new Date();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = now.getHours();
+            document.querySelectorAll('li').forEach(li => {
+                li.classList.remove('highlight');
+            });
+            let period, highlightClass;
+            if (hours >= 18) {
+                period = 'N';      // Night
+                highlightClass = 'night';
+            } else if (hours >= 12) {
+                period = 'A';      // Afternoon
+                highlightClass = 'afternoon';
+            } else if (hours >= 6) {
+                period = 'M';      // Morning
+                highlightClass = 'morning';
+            } else {
+                period = 'D';      // Dawn
+                highlightClass = 'dawn';
+            }
+            const flightNum = `MH${month}${day}${period} / MAS${month}${day}${period}`;
+            document.getElementById('flight-number').innerHTML = `<strong>Flight: ${flightNum}</strong>`;
+            const targetLi = document.querySelector(`.${highlightClass}`);
+            if (targetLi) targetLi.classList.add('highlight');
+        }
+        function init() {
+            updateTime();
+            updateFlightNumber();
+            
+            setInterval(updateTime, 1000);
+            setInterval(updateFlightNumber, 60000);
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>

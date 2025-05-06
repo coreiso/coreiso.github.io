@@ -1,0 +1,708 @@
+<!-- 
+    Copyright 2025 COREISO INC
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<!-- <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /> -->
+<style>
+    @font-face {
+        font-family: 'meso';
+        src: url('./BoeingMeso-Regular.woff');
+    }
+    #write {
+        font-family: 'meso', sans-serif !important;
+        color: #2c3e50 !important;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    }
+</style>
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+/* @include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext); */
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Infos</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h4 id='about-the-informations-of-9m-mra'><span>About the Informations of 9M-MRA</span></h4><hr /><h6 id='overview'><span>OVERVIEW</span></h6><ol start='' ><li><p><span>Operating History</span></p><p><span>On April 2, 1997, the Boeing 777-200ER with registration number 9M-MRA set sail from the Boeing Aircraft Manufacturing Plant in Seattle. After a long journey of 21 hours and 23 minutes, spanning 20044 kilometers (10823 nautical miles), it successfully arrived in Kuala Lumpur, Malaysia. This feat not only marked the delivery of the aircraft to Malaysia Airlines, but also broke the record for non-stop routes for commercial aircraft, even though no passengers were on board at the time.</span></p><p>&nbsp;</p><p><span>After joining the Malaysia Airlines fleet, 9M-MRA began frequent flight missions. It shuttles between important cities around the world, undertaking the responsibility of passenger transportation and building a convenient air bridge for people to travel between Malaysia and the world. Its flight network is extensive, covering many popular international routes, such as between Amsterdam and Kuala Lumpur in Europe, as well as intra Asian routes such as Denpasar to Kuala Lumpur in Bali, providing passengers with comfortable and efficient travel options.</span></p><p>&nbsp;</p><p><span>With the passage of time and the development and changes in the aviation industry, 9M-MRA completed its passenger mission at Malaysia Airlines in January 2016, withdrew from the fleet, and was subsequently arranged for storage at Kuala Lumpur International Airport (KUL). During the storage period, although it was in a relatively stationary state, all maintenance work was carried out in an orderly manner to ensure that the aircraft still had certain airworthiness conditions in case of new demands in the future.</span></p><p>&nbsp;</p><p><span>In 2020, in order to adapt to the changes in the air cargo market and new plans for the reuse of aircraft resources, 9M-MRA underwent an important transformation and was converted into a bulk carrier. This modification involves significant adjustments to the internal structure of the aircraft, the removal of existing passenger facilities, and the installation of relevant equipment suitable for cargo transportation. However, after the modification was completed, it still remained in a sealed state at KUL, waiting for new operational opportunities.</span></p><p>&nbsp;</p><p><span>Until 2024, COREISO INC took over the operation of 9M-MRA, giving this historically rich aircraft a new lease on life and continuing to be active in the aviation industry with a unique posture.</span></p><p>&nbsp;</p></li><li><p><span>Technical Parameters</span></p><p><span>Basic Design:</span></p><ul><li><span>Body length: 63.73 meters (209 feet 1 inch)</span></li><li><span>Wingspan: 60.9 meters (199 feet 9 inches)</span></li><li><span>Height: 18.5 meters (60 feet 8 inches)</span></li><li><span>Body width: 6.19 meters (20 feet 3 inches)</span></li><li><span>Cabin width: 5.86 meters (19 feet 2 inches)</span></li><li><span>Wing area: 427.8 square meters (4605 square feet)</span></li></ul><p>&nbsp;</p><p><span>Weight and Load Capacity:</span></p><ul><li><span>Maximum takeoff weight: 297550 kilograms (656000 pounds)</span></li><li><span>Maximum landing weight: 213180 kilograms (469981 pounds)</span></li><li><span>Empty weight: 138100 kilograms (304500 pounds)</span></li><li><span>Maximum commercial load: 56925 kilograms (125498 pounds)</span></li><li><span>Fuel capacity: 171171 liters (45220 gallons)</span></li></ul><p>&nbsp;</p><p><span>Engine and Thrust:</span></p><ul><li><span>Rolls-Royce Trent 892-17EP2 (Max-Thrust 92,000lbf / 409.2kilonewtons)</span></li></ul><p>&nbsp;</p><p><span>Performance:</span></p><ul><li><span>Cruise speed: 0.84 Mach (approximately 905 kilometers per hour)</span></li><li><span>Maximum speed: 0.89 Mach (approximately 1028 kilometers per hour)</span></li><li><span>Practical ceiling: 13137 meters (43100 feet)</span></li></ul><p>&nbsp;</p><p><span>Range:</span></p><ul><li><span>Standard configuration: 13080 kilometers (7065 nautical miles)</span></li><li><span>Extreme range (light load): 14260 kilometers (7700 nautical miles)</span></li><li><span>Takeoff distance: 3580 meters (11745 feet)</span></li></ul></li></ol><p>&nbsp;</p><h6 id='events'><span>EVENTS</span></h6><ol start='' ><li><p><span>Join Malaysia Airlines Fleet</span></p><p><span>9M-MRA was born in 1997 and manufactured by Boeing Company in the United States. As a leading enterprise in the global aviation manufacturing industry, Boeing has advanced production technology and strict quality control system. This aircraft was assembled at Boeing&#39;s production plant, starting its glorious aviation journey here. Its serial number is 28408 and production line number (LN) is 64, each carrying its unique identity information and production history.</span></p><p>&nbsp;</p></li><li><p><span>Exit Malaysia Airlines Fleet</span></p><p><span>In January 2016, due to various factors such as fleet strategy adjustment and operational cost optimization faced by Malaysia Airlines, 9M-MRA ended its nearly 20-year service life with Malaysia Airlines and officially withdrew from the fleet. Afterwards, it was placed under quarantine at Kuala Lumpur International Airport (KUL). During the storage period, the aircraft is in a special maintenance state, and the airline arranges professional personnel to regularly inspect and maintain the aircraft, including fuselage structure inspection, engine maintenance, aviation electronic equipment testing, etc., to ensure that key components of the aircraft will not be damaged due to long-term parking, maintain the basic airworthiness of the aircraft, and reserve hope for possible future reactivation.</span></p><p>&nbsp;</p></li><li><p><span>Airframe Refitted</span></p><p><span>In 2020, the global aviation market landscape underwent significant changes, and the demand for air cargo presented a different development trend from the past. In this context, 9M-MRA has undergone a significant transformation from being converted into a bulk carrier. The modification project is a complex and meticulous work. A professional team dismantled the original passenger facilities such as seats and cabin decorations inside the aircraft, re planned and laid out the cabin space, and installed equipment such as mooring devices and cargo loading and unloading rails to meet the special needs of cargo transportation. However, despite completing the modification, due to the overall environment of the aviation market and other operational factors at the time, 9M-MRA was not immediately put into operation, but continued to be in a sealed state at KUL, waiting for the appropriate market timing and operational arrangements.</span></p><p>&nbsp;</p></li><li><p><span>New Starting Point</span></p><p><span>In 2024, COREISO INC took over the operation rights of 9M-MRA from Malaysia Airlines, injecting new vitality into this aircraft. Remarkably, under the new operating entity, 9M-MRA still retains the classic livery of Malaysia Airlines. The fuselage is mainly decorated with the iconic colors of Malaysia Airlines, and the prominent airline logo is clearly visible. This coating is not only an exterior decoration, but also carries the brand image and historical memory of Malaysia Airlines. At the same time, the aircraft continues to use the call sign &quot;MALAYSIAN&quot;. In aviation communication, this call sign can still evoke people&#39;s impressions of the Malaysia Airlines era, making 9M-MRA a unique development path in inheritance and transformation, and becoming a significant presence in the aviation field.</span></p></li></ol><p>&nbsp;</p><h6 id='summary'><span>SUMMARY</span></h6><p><span>The 9M-MRA, a Boeing 777-200ER, has undergone a series of significant transformations throughout its long aviation career, from delivery and operation to storage, modification, and re-entry into operation. It witnesses the development strategy and operational status of Malaysia Airlines in different periods, and also reflects the adjustment and transformation of the global aviation industry in response to changes in passenger and cargo market demand.</span></p><p>&nbsp;</p><p><span>From initially serving as the main passenger aircraft of Malaysia Airlines, undertaking busy domestic and international flight tasks, to exiting the fleet due to industry development and company strategic adjustments, to being modified to adapt to the freight market, and finally being taken over by COREISO INC while retaining the original livery and call sign, each stage has a unique significance. It is not only an airplane, but also a vivid epitome of the development process of the aviation industry. In the future, with the continuous changes and development of the aviation market, 9M-MRA is expected to continue to play a role in the aviation field under the operation of COREISO INC, continuing its unique chapter and providing continuous attention and research value for aviation enthusiasts and related practitioners.</span></p><p>&nbsp;</p><h6 id='annexes'><span>ANNEXES</span></h6><ul><li><p><strong><span>Airframe Details</span></strong></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="txt"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="txt"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.2px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">9M-MRA Malaysia Airlines Boeing 777-2H6ER</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">-----------------------------------------</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Manufacturer Serial Number (MSN):<span class="cm-tab" role="presentation" cm-text="	">   </span>28408</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Line Number: 64<span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>SELCAL: QR-EF</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Aircraft Type:<span class="cm-tab" role="presentation" cm-text="	">  </span>Built as Boeing 777-2H6ER</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">First Flight:<span class="cm-tab" role="presentation" cm-text="	">   </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>  26 Mar 1997</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Engine Model: Rolls-Royce Trent 892-17EP2</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Test Registration:<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span> &nbsp; N5017V</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Production Site:<span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>Everett (PAE)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Airframe Status:<span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span> &nbsp; Active</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 246px;"></div><div class="CodeMirror-gutters" style="display: none; height: 246px;"></div></div></div></pre><p>&nbsp;</p></li><li><p><strong><span>Airframe Layout</span></strong><img src="Infos.assets/Layout1.png" referrerpolicy="no-referrer" alt="Layout1"></p><p>&nbsp;</p></li><li><p><strong><span>Airframe 3-View</span></strong></p><p><img src="Infos.assets/3-View.png" referrerpolicy="no-referrer" alt="3-View"></p><p>&nbsp;</p></li><li><p><strong><span>Airframe Cockpit</span></strong><img src="Infos.assets/Cockpit.png" referrerpolicy="no-referrer" alt="Cockpit"></p><p>&nbsp;</p></li><li><p><strong><span>Control Panel Layout</span></strong></p><p><img src="Infos.assets/Panels.png" referrerpolicy="no-referrer" alt="Panels"></p><p>&nbsp;</p><p><strong><span>GND PROX</span></strong></p><ul><li><strong><span>G/S INHIBIT:</span></strong><span> Typically used to suppress glide slope related functions and prevent unwanted glide slope signal interference in specific situations.</span></li><li><strong><span>FLAP OVRD:</span></strong><span> When the flap system malfunctions or special operations are required, this override switch can be used to intervene in the control of the flaps and bring them to the desired state.</span></li><li><strong><span>GEAR OVRD:</span></strong><span> Used to manually override and control the landing gear retraction and deployment actions in the event of a malfunction in the landing gear retraction and deployment system.</span></li><li><strong><span>LOCK OVRD:</span></strong><span> Used for overriding landing gear locking and other related systems.</span></li><li><strong><span>TERR OVRD:</span></strong><span> Overcontrol operations can be performed when specific terrain related systems encounter problems or require special operations.</span></li><li><strong><span>ALTN GEAR:</span></strong><span> Related to the backup landing gear system, this switch can be used to activate the operation mode of the backup landing gear when the main landing gear system fails. </span></li></ul><p><strong><span>ELECTRICAL</span></strong></p><ul><li><strong><span>BATTERY:</span></strong><span> When the switch is set to &quot;ON&quot;, it connects the aircraft battery power supply to provide power for the initial stages of the aircraft&#39;s ground start-up, or to provide backup power in the event of a main power failure. </span></li><li><strong><span>APU (Auxiliary Power Unit):</span></strong><span> ON and OFF control the start and stop of the APU, and the &quot;START&quot; button is used to start the APU. APU can provide power and bleed air for aircraft on the ground or in the air.</span></li><li><strong><span>APU GEN: </span></strong><span>When the switch is set to &quot;ON&quot;, the APU generator supplies power to the aircraft electrical system.</span></li><li><strong><span>L BUS TIE and R BUS TIE:</span></strong><span> When the switch is set to &quot;AUTO&quot;, it automatically controls the connection and disconnection of the left and right main busbars to achieve reasonable allocation and backup of the power system.</span></li><li><strong><span>SECONDLY EXT PWR and PRIMARY EXT PWR:</span></strong><span> Used to connect and control external power sources to supply power to the aircraft. Under normal circumstances, the first external power source is prioritized.</span></li><li><strong><span>L MAIN GEN CTRL and R MAIN GEN CTRL:</span></strong><span> When the switch is set to &quot;ON&quot;, the left and right main generators are turned on, which are driven by the engine to generate electricity.</span></li><li><strong><span>BACKUP GEN (L and R):</span></strong><span> The &quot;ON&quot; switch controls the standby generator to be put into use in specific situations such as main generator failure, providing emergency power.</span></li></ul><p><strong><span>RAM AIR TURBINE:</span></strong><span> This switch is used to control the release and retraction of the ram air turbine. When there is a serious malfunction in the hydraulic or electrical system of an aircraft, the ram air turbine can be manually released to generate hydraulic or electrical power through airflow, providing emergency power for critical systems.</span></p><p><strong><span>HYDRAULIC</span></strong></p><ul><li><strong><span>C1 -- ELEC -- C2:</span></strong><span> Representing electrical connections or controls related to the hydraulic system, two &quot;ON&quot; switches are used to connect the electrical control circuit between C1 and C2, ensuring the normal operation of the hydraulic system&#39;s electrical related functions.</span></li><li><strong><span>L ENG and R ENG:</span></strong><span> The &quot;ON&quot; switch is used to control the working status of the hydraulic pumps driven by the left and right engines. When turned on, the corresponding engine driven hydraulic pumps operate to provide pressure to the hydraulic system.</span></li><li><strong><span>L ELEC and R ELEC:</span></strong><span> The &quot;ON/OFF&quot; switch below is used to control left and right electrical related functions. When &quot;ON&quot;, the function is activated, and when &quot;OFF&quot;, it is turned off. When the switch is in &quot;AUTO&quot;, it automatically controls left and right electrical related functions.</span></li></ul><p><strong><span>FUEL JETTISION</span></strong></p><ul><li><strong><span>L NOZZLE and R NOZZLE:</span></strong><span> Used to control the left and right fuel abandonment nozzles. When it is necessary to urgently discard fuel (such as when the aircraft is overweight and needs to land), turn on these switches, and the fuel can be discharged through the corresponding nozzle.</span></li><li><strong><span>FUEL TO REMAIN:</span></strong><span> Used to set or display the expected remaining fuel level, which can be used as a reference during the fuel abandonment process.</span></li><li><strong><span>ARM:</span></strong><span> Press this switch to pre position the fuel abandonment system, putting it in a ready to work state.</span></li></ul><p><strong><span>FUEL</span></strong></p><ul><li><strong><span>L PUMPS FWD and L PUMPS AFT:</span></strong><span> The &quot;ON&quot; switch is used to control the start and stop of the left front and left rear fuel pumps, providing pressure to the fuel system.</span></li><li><strong><span>R PUMPS FWD and R PUMPS AFT:</span></strong><span> Similar to the left fuel pump, they control the working status of the right front and right rear fuel pumps.</span></li><li><strong><span>CROSSFEED FWD and CROSSFEED AFT:</span></strong><span> switch controls the front and rear fuel supply function, which can achieve fuel transfer between the left and right fuel tanks when turned on, used to balance fuel or for specific engine fuel supply needs.</span></li><li><strong><span>CENTER PUMPS:</span></strong><span> The &quot;L (left)&quot; and &quot;R (right)&quot; switches respectively control the left and right fuel pumps of the central fuel tank, used to deliver fuel from the central fuel tank to the engine and other parts.</span></li></ul><p><strong><span>CARGO FIRE</span></strong></p><ul><li><strong><span>FWD and AFT:</span></strong><span> These two buttons correspond to the front and rear cargo compartments of the aircraft, respectively. When the cargo hold fire alarm system detects signs of fire in the front or rear cargo hold, the relevant indicator lights may light up. If the fire alarm is confirmed, the corresponding button can be pressed for further operation.</span></li><li><strong><span>DISCH:</span></strong><span> There are two DISCH buttons, one for releasing fire extinguishers from APU and the other for releasing fire extinguishers from the front and rear cargo compartments. After confirming the fire, press the corresponding DISCH button to release the extinguishing medium into the APU or cargo hold to extinguish the fire.</span></li><li><strong><span>FIRE/OVHT TEST:</span></strong><span> Used to test whether the cargo hold fire alarm and overheat detection system is working properly. Pressing this button will cause the system to perform a self-test, and the corresponding indicator lights should turn on and off as expected to indicate that the system is functioning properly.</span></li></ul><p><strong><span>ENGINE</span></strong></p><ul><li><strong><span>ECC MODE:</span></strong><span> Generally, it remains in normal mode. When the engine control computer malfunctions or requires special settings, it may involve mode switching and other operations, but it must be strictly followed according to the flight manual.</span></li><li><strong><span>START:</span></strong><span> There are three START related buttons, with manual start buttons located on the left and right sides, used to start the left and right engines under normal conditions; The AUTOSTART button in the middle is used for setting the automatic start mode. After activating the automatic start function, the system will start the engine according to the preset program.</span></li></ul><p><strong><span>AIR CONDITIONING</span></strong></p><ul><li><strong><span>RECIRC FANS:</span></strong><span> There are two switches, &quot;UPPER&quot; and &quot;LOWER&quot;. When placed in the &quot;ON&quot; position, the upper and lower recirculation fans are respectively activated to circulate air in the cabin, improve air utilization efficiency, and reduce the load on the air intake system.</span></li><li><strong><span>FLT DECK TEMP:</span></strong><span> This knob is used to set the control mode for the cockpit temperature. Turning the knob can set the desired temperature for the cockpit, and the AUTO mode system will automatically adjust to maintain that temperature. &#39;C&#39; represents cold, &#39;W&#39; represents warm.</span></li><li><strong><span>AIR COND RESET:</span></strong><span> When the air conditioning system malfunctions or is abnormal, you can press this button to attempt to reset the air conditioning system and restore its normal working state.</span></li><li><strong><span>L PACK and R PACK:</span></strong><span> When these two switches are placed in the &quot;AUTO&quot; position, the left and right air conditioning components will operate in automatic mode, automatically adjusting cooling, boosting, and other functions according to the needs and settings of the aircraft.</span></li><li><strong><span>L - TRIM AIR - R:</span></strong><span> These two switches are used to control the supply of left and right balance air. Balancing air is used to adjust the temperature and pressure balance inside the cabin, and opening the switch can increase the corresponding side&#39;s balancing air flow.</span></li></ul><p><strong><span>BLEED AIR</span></strong></p><ul><li><strong><span>L ISLN and C ISLN and R ISLN:</span></strong><span>  When the switch is set to &quot;AUTO&quot;, these isolation valves will automatically control the on/off of the left, middle, and right bleed air ducts according to the system requirements of the aircraft, to ensure the proper operation of the bleed air system and isolate faults.</span></li><li><strong><span>L ENG and R ENG:</span></strong><span> The &quot;ON&quot; switch is used to connect the bleed air of the left and right engines. When the engine is running, high-temperature and high-pressure air can be drawn from the compressor for use in air conditioning, anti icing, and APU startup.</span></li><li><strong><span>APU (Auxiliary Power Unit):</span></strong><span> When the switch is set to &quot;AUTO&quot;, the APU bleed air system will automatically control the supply of bleed air according to the aircraft&#39;s needs. The APU can provide bleed air to the aircraft on the ground or in the air.</span></li></ul><p><strong><span>PRESSURIZATION</span></strong></p><ul><li><strong><span>FWD - OUTFLOW VALVE - AFT:</span></strong><span> When both switches are set to &quot;AUTO&quot;, the front and rear outflow valves of the aircraft will automatically adjust to maintain cabin pressure by controlling the amount of air flowing out of the aircraft, ensuring that cabin pressurization is within a safe and reasonable range.</span></li></ul><p>&nbsp;</p><p><strong><span>Standardized Manual Execution Process For 9M-MRA</span></strong></p><hr /><p><strong><span>STARTING</span></strong></p><h6 id='1-electrical'><span>1. ELECTRICAL</span></h6><blockquote><p><span>TURN ON</span></p><ul><li><p><span>BATTERY → ON</span></p></li><li><p><span>PRIMARY EXT PWR → ON</span></p></li><li><p><span>APU → ON → START</span></p></li><li><p><span>APU GEN → ON</span></p></li><li><p><span>L MAIN → ON</span></p></li><li><p><span>R MAIN → ON</span></p></li><li><p><span>BACKUP GEN</span></p><ul><li><span>L → ON</span></li><li><span>R → ON</span></li></ul></li></ul></blockquote><h6 id='2-bleed-air'><span>2. BLEED AIR</span></h6><blockquote><p><span>TURN ON</span></p><ul><li><span>L ENG → ON</span></li><li><span>R ENG → ON</span></li></ul></blockquote><h6 id='3-air-conditioning'><span>3. AIR CONDITIONING</span></h6><blockquote><p><span>TURN ON</span></p><ul><li><p><span>RECIRC FANS</span></p><ul><li><span>UPPER → ON</span></li><li><span>LOWER → ON</span></li></ul></li><li><p><span>TRIM AIR</span></p><ul><li><span>L → ON</span></li><li><span>R → ON</span></li></ul></li></ul></blockquote><h6 id='4-hydraulic'><span>4. HYDRAULIC</span></h6><blockquote><p><span>TURN ON</span></p><ul><li><p><span>ELEC</span></p><ul><li><span>C1 → ON</span></li><li><span>C2 → ON</span></li></ul></li><li><p><span>R ENG → ON</span></p></li><li><p><span>L ENG → ON</span></p></li></ul></blockquote><h6 id='5-fuel'><span>5. FUEL</span></h6><blockquote><p><span>TURN ON</span></p><ul><li><p><span>L PUMPS</span></p><ul><li><span>FWD → ON</span></li></ul></li><li><p><span>R PUMPS</span></p><ul><li><span>FWD → ON</span></li></ul></li><li><p><span>L PUMPS</span></p><ul><li><span>AFT → ON</span></li></ul></li><li><p><span>R PUMPS</span></p><ul><li><span>AFT → ON</span></li></ul></li></ul></blockquote><h6 id='6-engine'><span>6. ENGINE</span></h6><blockquote><p><span>TURN ON</span></p><ul><li><span>AUTOSTART → ON</span></li></ul></blockquote><hr /><p><strong><span>CLOSING</span></strong></p><h6 id='1-engine'><span>1. ENGINE</span></h6><blockquote><p><span>TURN OFF</span></p><ul><li><span>AUTOSTART → OFF</span></li></ul></blockquote><h6 id='2-fuel'><span>2. FUEL</span></h6><blockquote><p><span>TURN OFF</span></p><ul><li><p><span>L PUMPS</span></p><ul><li><span>FWD → OFF</span></li></ul></li><li><p><span>R PUMPS</span></p><ul><li><span>FWD → OFF</span></li></ul></li><li><p><span>L PUMPS</span></p><ul><li><span>AFT → OFF</span></li></ul></li><li><p><span>R PUMPS</span></p><ul><li><span>AFT → OFF</span></li></ul></li></ul></blockquote><h6 id='3-hydraulic'><span>3. HYDRAULIC</span></h6><blockquote><p><span>TURN OFF</span></p><ul><li><p><span>R ENG → OFF</span></p></li><li><p><span>L ENG → OFF</span></p></li><li><p><span>ELEC</span></p><ul><li><span>C1 → OFF</span></li><li><span>C2 → OFF</span></li></ul></li></ul></blockquote><h6 id='4-air-conditioning'><span>4. AIR CONDITIONING</span></h6><blockquote><p><span>TURN OFF</span></p><ul><li><p><span>TRIM AIR</span></p><ul><li><span>L → OFF</span></li><li><span>R → OFF</span></li></ul></li><li><p><span>RECIRC FANS</span></p><ul><li><span>UPPER → OFF</span></li><li><span>LOWER → OFF</span></li></ul></li></ul></blockquote><h6 id='5-bleed-air'><span>5. BLEED AIR</span></h6><blockquote><p><span>TURN OFF</span></p><ul><li><span>L ENG → OFF</span></li><li><span>R ENG → OFF</span></li></ul></blockquote><h6 id='6-electrical'><span>6. ELECTRICAL</span></h6><blockquote><p><span>TURN OFF</span></p><ul><li><p><span>BACKUP GEN</span></p><ul><li><span>L → OFF</span></li><li><span>R → OFF</span></li></ul></li><li><p><span>L MAIN → OFF</span></p></li><li><p><span>R MAIN → OFF</span></p></li><li><p><span>APU GEN → OFF</span></p></li><li><p><span>APU → OFF</span></p></li><li><p><span>PRIMARY EXT PWR → OFF</span></p></li><li><p><span>BATTERY → OFF</span></p></li></ul></blockquote><hr /><p><span>THE ABOVE OPERATION IS THE CORE PROGRAM, IF THERE ARE UNFORESEEABLE PROBLEMS WITH THE AIRCRAFT IN THE AIR OR ON THE GROUND, PLEASE CHECK EICAS AND MFD AS SOON AS POSSIBLE AND FOLLOW MFD&#39;S PROMPTS AND SUGGESTIONS FOR EMERGENCY HANDLING</span></p><p>&nbsp;</p></li><li><p><strong><span>Fly By Wire Architecture</span></strong></p><p><span>The Boeing 777 aircraft adopts a traditional exterior layout with two wing mounted engines.</span></p><p><span>There are a pair of outer ailerons, a pair of flap ailerons, seven pairs of spoilers, as well as leading edge slats, trailing edge flaps and other lift enhancement devices arranged on both wings.</span></p><p><span>The tail wing is equipped with a horizontal stabilizer, a pair of elevators, and a rudder.</span></p><p><span>Among them, elevators and horizontal stabilizers are used to achieve pitch control; Flaps, ailerons, and spoilers are used to achieve roll control; The rudder is used to achieve yaw control.</span></p><p><span>The lower section of the rudder has a movable small control surface (adjustment plate). The rotation speed of the adjustment plate is twice that of the main control surface to provide additional yaw control capability.</span></p><p>&nbsp;</p><p><img src="Infos.assets/Layout2.png" referrerpolicy="no-referrer" alt="Layout2"></p><p>&nbsp;</p><p><span>The Boeing 777 fly by wire flight control system mainly consists of the following components: 3-degree main flight computer PFC, 4-degree actuator control electronic device ACE, power control unit PCU, control stick/disc, pedals, ARINC 629 bus, etc.</span></p><p><span>The subsystems that are interconnected with the external environment include: Automatic Flight Control Director (AFDC), Aircraft Information Management System (AIMS), Air Data Inertial Reference Unit (ADIRU), Backup Attitude and Air Data Reference Unit (SAARU), etc.</span></p><p>&nbsp;</p><p><img src="Infos.assets/FBWA.png" referrerpolicy="no-referrer" alt="FBWA"></p><p>&nbsp;</p><p><strong><span>HYDIM（Hydraulic Interface Module）：</span></strong><span> The hydraulic interface module monitors the status of the hydraulic system, provides feedback on hydraulic pressure and other data to the flight control system, and ensures the normal hydraulic drive of the control surface actuator.</span></p><p><strong><span>ELMS（Engine/Landing Gear Monitoring System）：</span></strong><span> The engine/landing gear monitoring system collects engine parameters and landing gear status for the flight control system to adjust strategies under different operating conditions (such as takeoff and landing).</span></p><p><strong><span>PSEU（Proximity Switch Electronic Unit）：</span></strong><span> Approaching the electronic components of the switch, processing position signals of landing gear, cabin doors, and other components (such as folding/lowering), and participating in flight control logic judgment.</span></p><p><strong><span>WES（Wheel Electronic System）：</span></strong><span> The wheel electronic system manages data such as wheel brakes and tire pressure for flight control during ground taxiing or landing phases.</span></p><p><strong><span>EDIU（Engine Data Interface Unit）：</span></strong><span> The engine data interface unit collects data such as engine thrust and speed, allowing the flight control to control the flight based on the power status.</span></p><p><strong><span>FSEU（Flight Spoiler Electronic Unit）：</span></strong><span> The electronic unit of the flight spoiler is specifically designed to control the deployment/retraction of the spoiler, assist in deceleration and attitude adjustment.</span></p><p><strong><span>EICAS/MFD（Engine Indication and Crew Alerting System/Multi-Function Display）：</span></strong><span> Engine indication and crew alarm system/multifunctional display, displaying flight control status and alarm information, assisting in crew monitoring.</span></p><p><strong><span>IDS（Integrated Display System）：</span></strong><span> The integrated display system integrates flight, navigation, engine and other data, visually displays key information (such as altitude, airspeed, weather) through the cockpit screen, and assists pilots in real-time decision-making and operation.</span></p><p><strong><span>RA（Radio Altimeter）：</span></strong><span> Radio altimeter measures the vertical distance between the aircraft and the ground, providing altitude related control for flight control during approach and landing phases.</span></p><p><strong><span>AIMS（Aircraft Information Management System）：</span></strong><span> The aircraft information management system integrates all aircraft data, provides comprehensive information for flight control, and supports system collaboration.</span></p><p><strong><span>AFDC（Automatic Flight Control Director）：</span></strong><span> The automatic flight control director generates commands such as heading and altitude maintenance in autopilot mode, and cooperates with the flight control to achieve automatic flight.</span></p><p><strong><span>ADIRU（Air Data Inertial Reference Unit）：</span></strong><span> The atmospheric data inertial reference unit provides core data such as attitude, heading, airspeed, barometric altitude, etc., and is the foundation of flight control calculations.</span></p><p><strong><span>SAARU（Solid State Attitude and Reference Unit）：</span></strong><span> Solid state attitude reference unit, assisting in determining aircraft attitude and providing attitude reference for flight control.</span></p><p><strong><span>ADM（Air Data Module）：</span></strong><span> The atmospheric data module processes static and dynamic pressure data, calculates airspeed and altitude, and provides flight control with the ability to determine flight status.</span></p><p><strong><span>ACE（Actuator Control Electronics）：</span></strong><span> The actuator control electronic device, flight control core computer, receives operational inputs and sensor data, calculates and generates control surface control instructions, and has redundant design to ensure reliability.</span></p><p><strong><span>PFC（Primary Flight Computer）：</span></strong><span> The main flight computer participates in flight control law calculations, processes trajectory and attitude control logic, and collaborates with ACE to enhance flight control capabilities.</span></p><p><strong><span>PCU（Power Control Unit）：</span></strong><span> The power control unit, after receiving flight control commands, drives the control surfaces (such as elevators, ailerons, and rudders) through hydraulic or electric means to achieve attitude changes, and is the ultimate executor of flight control commands.</span></p><p>&nbsp;</p></li><li><p><strong><span>Operation Modes</span></strong></p><p><strong><span>Normal mode:</span></strong></p><p><span>In normal mode, the driver controls the control lever/disc, pedals, and speed brake lever, sends sensor analog signals to the actuator control electronic device ACE, and converts them into digital signals to be sent to the main flight computer PFC through the ARINC 629 bus.</span></p><p><span>PFC exchanges data with aircraft systems through the flight control bus. It receives signals from the air data inertial reference unit ADIRU or backup attitude and air data reference unit SAARU, as well as the aircraft information management system AIMS, and generates corresponding control instructions through control law calculations.</span></p><p><span>The calculated digital command signal is sent from PFC to ACE through the flight control bus. ACE converts these command signals into analog signals and sends them to a total of 31 PCUs, including ailerons, elevators, horizontal stabilizers, and rudders, to complete aircraft control.</span></p><p><strong><span>Secondary mode:</span></strong></p><p><span>When the flight control system has internal faults or lacks other system input information to support normal mode operation, the system automatically switches to secondary mode, and PFC executes the reconstructed control law.</span></p><p><strong><span>Direct mode:</span></strong></p><p><span>When the system loses 3 PFCs, it enters direct mode. The ACE receives driver commands and provides basic control capabilities from the pole to the rudder.</span></p><p><strong><span>Mechanical backup:</span></strong></p><p><span>When the electrical system completely fails, the system still provides a pair of spoilers (4 # and 11 # spoilers) and mechanical control backup of the horizontal stabilizer (ultimate backup), allowing for temporary control of the aircraft.</span></p><p><span>Mechanical backup cannot achieve safe flight and landing, it is only used to stabilize the aircraft attitude and wait for the restart of the fly by wire flight control system.</span></p></li></ul><p>&nbsp;</p><ul><li><strong><span>Authorization (SEAL)</span></strong><img src="Infos.assets/AuthSEAL.png" referrerpolicy="no-referrer" alt="AuthSEAL"></li></ul><p>&nbsp;</p><hr /><p><span>COREISO INC 2025 &amp; MALAYSIA AIRLINERS 2025</span></p></div></div>
+</body>
+</html>
