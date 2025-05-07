@@ -38,17 +38,17 @@
         
         <div class='flight-detail' id='real-time'><strong>Local Date: LOADING...</strong></div>
         <div class="flight-detail-cover">
-            <div class='flight-detail' id='flight-number'><strong>Flight: LOADING...</strong></div>
+            <div class='flight-detail' id='flight-number'><strong>Real Flight: LOADING...</strong></div>
         </div>
         <div class='remarks'> 
-            <strong>MH0000D/M/A/N & MAS0000D/M/A/N</strong>
+            <strong>MH/MAS0000D/M/A/N</strong>
             <ul>
-                <li><strong>MH/MAS: </strong>MALAYSIA AIRLINES (IATA/ICAO)</li>
-                <li><strong>0000: </strong>MMDD (MonthDay)</li>
-                <li class="dawn"><strong>D: </strong>00:00-05:59 (Dawn)</li>
-                <li class="morning"><strong>M: </strong>06:00-11:59 (Morning)</li>
-                <li class="afternoon"><strong>A: </strong>12:00-17:59 (Afternoon)</li>
-                <li class="night"><strong>N: </strong>18:00-23:59 (Night)</li>
+                <li>MH/MAS → IATA/ICAO</li>
+                <li>0000&nbsp;&nbsp;&nbsp;→&nbsp;MMDD (MonthDay)</li>
+                <li class="dawn">D → 00:00-05:59&nbsp;&nbsp;&nbsp;(Dawn)</li>
+                <li class="morning">M → 06:00-11:59&nbsp;&nbsp;&nbsp;(Morn)</li>
+                <li class="afternoon">A → 12:00-17:59&nbsp;&nbsp;(After)</li>
+                <li class="night">N → 18:00-23:59&nbsp;&nbsp;(Night)</li>
             </ul>
         </div>
         <div class="linked-cover">
@@ -58,10 +58,20 @@
 
         <div style="border-top: 0.15em dashed #2c3e50;"></div>
         <div class='footer'>
-            <strong>COREISO INC 2025 & MALAYSIA AIRLINES 2025</strong>
+            <strong>Supported By GitHub Pages <span id="currentYear"></span></strong><br>
+            <strong>Copyright <span id="copyrightYear"></span> COREISO INC & MALAYSIA AIRLINES</strong>
         </div>
+        <script>
+            const year = new Date().getFullYear();
+            document.getElementById('currentYear').textContent = year;
+            document.getElementById('copyrightYear').textContent = year;
+        </script>
     </div>
     <script>
+        console.log(
+            `Copyright ${new Date().getFullYear()} COREISO INC & MALAYSIA AIRLINES\n` +
+            `Website Version: 4.2.0`
+        );
         function redirectToInfos() {
             window.location.href = "./sources/Infos.html";
         }
@@ -92,17 +102,17 @@
                 period = 'N';      // Night
                 highlightClass = 'night';
             } else if (hours >= 12) {
-                period = 'A';      // Afternoon
+                period = 'A';      // After
                 highlightClass = 'afternoon';
             } else if (hours >= 6) {
-                period = 'M';      // Morning
+                period = 'M';      // Morn
                 highlightClass = 'morning';
             } else {
                 period = 'D';      // Dawn
                 highlightClass = 'dawn';
             }
             const flightNum = `MH${month}${day}${period} / MAS${month}${day}${period}`;
-            document.getElementById('flight-number').innerHTML = `<strong>Flight: ${flightNum}</strong>`;
+            document.getElementById('flight-number').innerHTML = `<strong>Real Flight: ${flightNum}</strong>`;
             const targetLi = document.querySelector(`.${highlightClass}`);
             if (targetLi) targetLi.classList.add('highlight');
         }

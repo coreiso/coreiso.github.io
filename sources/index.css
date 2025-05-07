@@ -81,6 +81,7 @@ body {
 }
 
 .remarks {
+    font-family: Cascadia Mono;
     background-color: #f8f9fa;
     border: 0.15em dashed #f8f9fa;
     padding: 10px; font-size: 1.1em;
@@ -137,4 +138,5 @@ body {
     color: #2c3e50;
     text-align: center;
     margin-top: 20px;
+    line-height: 2em;
 }
