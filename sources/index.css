@@ -1,0 +1,142 @@
+/*
+    Copyright 2025 COREISO INC
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
+
+*{margin: 0; padding: 0;}
+@font-face {
+    font-family: 'meso';
+    src: url('./BoeingMeso-Regular.woff');
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;
+}
+.highlight {
+    color: #2c3e50;
+}
+
+.flight-container {
+    font-family: 'meso', Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    cursor: default;
+}
+.flight-logo {
+    width: 100%; height: auto;
+    margin-top: 1%; display: flex;
+    justify-content: center;
+}
+.flight-logo img {
+    width: 40%;
+}
+.flight-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 5%;
+}
+.flight-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+.flight-detail {
+    margin: 8px 0;
+    font-size: 1.1em;
+    color: #2c3e50;
+}
+.flight-detail-cover {
+    background-color: #f8f9fa;
+    border: 0.15em dashed #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    transition: all 0.2s ease;
+}
+.flight-detail-cover:hover{
+    background-color: #ffffff;
+    border: 0.15em dashed #2c3e50;
+}
+
+.remarks {
+    font-family: Cascadia Mono;
+    background-color: #f8f9fa;
+    border: 0.15em dashed #f8f9fa;
+    padding: 10px; font-size: 1.1em;
+    border-radius: 5px;
+    color: #7f8c8d;
+    transition: all 0.2s ease;
+}
+.remarks ul {
+    margin-top: 0.5em;
+    margin-left: 1.2em;
+    line-height: 1.5em;
+}
+.remarks:hover{
+    background-color: #ffffff;
+    border: 0.15em dashed #2c3e50;
+    color: #2c3e50;
+}
+
+.linked-cover {
+    width: 100%;
+    display: flex; font-size: 1.1em;
+    justify-content: space-between;
+}
+.linked-cover .linked1 {
+    width: 40%; height: auto;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0; color: #7f8c8d;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.linked-cover .linked1:active {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+.linked-cover .linked2 {
+    width: 40%; height: auto;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0; color: #7f8c8d;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.linked-cover .linked2:active {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+.footer {
+    font-size: 0.8em;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 2em;
+}
